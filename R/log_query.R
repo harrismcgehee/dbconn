@@ -13,7 +13,7 @@
 log_query <- function(conn, query) {
     logger::log_info("about to run query ",query)
     res <- DBI::dbGetQuery(conn, query)
-    logger::log_info("Ran query ", query, " with {nrow(r)} rows returned")
+    logger::log_info("Ran query ", query, " with {nrow(res)} rows returned")
 
     res
 }
