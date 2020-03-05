@@ -6,14 +6,15 @@
 #'
 #' @param conn  connection
 #' @param query query
+#' @param namespace logger namespace to use
 #'
 #' @return data.frame
 #' @export
 #'
-log_query <- function(conn, query) {
-    logger::log_info("about to run query ",query)
+log_query <- function(conn, query, namespace = "global") {
+    logger::log_info("about to run query ",query, namespace = namespace)
     res <- DBI::dbGetQuery(conn, query)
-    logger::log_info("Ran query ", query, " with {nrow(r)} rows returned")
+    logger::log_info("Ran query ", query, " with {nrow(res)} rows returned", namespace = namespace)
 
     res
 }

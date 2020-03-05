@@ -4,12 +4,14 @@
 \alias{log_query}
 \title{get query}
 \usage{
-log_query(conn, query)
+log_query(conn, query, namespace = "global")
 }
 \arguments{
 \item{conn}{connection}
 
 \item{query}{query}
+
+\item{namespace}{logger namespace to use}
 }
 \value{
 data.frame
